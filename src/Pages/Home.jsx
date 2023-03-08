@@ -1,4 +1,5 @@
 import List from "../components/List";
+import Map from "../components/Map";
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
                 {/* content container  */}
                 <div className="flex space-x-3">
                 <List/>
+                <Map/>
                 </div>
             </div>
         </main>
