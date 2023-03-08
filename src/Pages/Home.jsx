@@ -1,6 +1,11 @@
 const Home = () => {
     return (
-        null
+        <main>
+            {/* main container  */}
+            <div className="main-container">
+                
+            </div>
+        </main>
     )
 }
 
