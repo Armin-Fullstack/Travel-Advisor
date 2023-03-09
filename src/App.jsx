@@ -4,7 +4,6 @@ import Pages from "./Pages/Pages"
 
 
 const App = () => {
-  
   return (
    <>
    <Header/>
