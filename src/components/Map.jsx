@@ -2,7 +2,7 @@ import GoogleMapReact from 'google-map-react';
 const Map = () => {
     const coordinates = {lat: 0 , lng: 0}
     return (
-        <div className="flex-1 min-h-screen">
+        <div className="flex-[2] min-h-screen">
             <GoogleMapReact
             bootstrapURLKeys={{key: import.meta.env.VITE_GOOGLE_MAP_API_KEY}}
             defaultCenter={coordinates}
