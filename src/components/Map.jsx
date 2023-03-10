@@ -5,14 +5,18 @@ import { getRestaurantsData } from '../api';
 
 const Map = () => {
     const [restaurants , setRestaurants] = useState([])
-    const [coordinates , setCoordinates] = useState({lat: 0 , lng: 0})
+    const [coordinates , setCoordinates] = useState({})
     const [bounds , setBounds] = useState(null)
 
-
-
-    // invoking 
+    // get user's position 
     useEffect(() => {
-        console.log(coordinates , bounds);
+        navigator.geolocation.getCurrentPosition(({coords: {latitude , longitude}}) => {
+            setCoordinates({lat: latitude , lng: longitude})
+        })
+    } , [])
+
+    // invoking the function from api
+    useEffect(() => {
         getRestaurantsData()
         .then((data) => {
             setRestaurants(data)
