@@ -14,7 +14,7 @@ const options = {
   }
 };
 
- export const getPlaceData = async () => {
+ export const getRestaurantsData = async () => {
     try {
         const {data: {data}} = await axios.get(URL , options)
         return data
