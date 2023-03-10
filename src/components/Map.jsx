@@ -5,16 +5,19 @@ import { getRestaurantsData } from '../api';
 
 const Map = () => {
     const [restaurants , setRestaurants] = useState([])
-    const coordinates = {lat: 0 , lng: 0}
+    const [coordinates , setCoordinates] = useState({lat: 0 , lng: 0})
+    const [bounds , setBounds] = useState(null)
+
 
 
     // invoking 
     useEffect(() => {
+        console.log(coordinates , bounds);
         getRestaurantsData()
         .then((data) => {
             setRestaurants(data)
         })
-    } , [])
+    } , [coordinates , bounds])
 
 
     return (
@@ -26,7 +29,11 @@ const Map = () => {
             defaultZoom={14}
             margin={[50,50,50,50]}
             options={""}
-            onChange={""}
+            onChange={e => {
+                setCoordinates({lat: e.center.lat , lng: e.center.lng})
+                setBounds({ne: e.marginBounds.ne , sw: e.marginBounds.sw})
+                
+            }}
             onChildClick={""}
             >
             </GoogleMapReact>
