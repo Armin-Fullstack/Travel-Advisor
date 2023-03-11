@@ -12,7 +12,7 @@ const Home = () => {
             <div className="main-container">
                 {/* content container  */}
                 <div className="flex space-x-3">
-                <List/>
+                <List restaurants={restaurants}/>
                 <Map coordinates={coordinates} bounds={bounds} setBounds={setBounds} setCoordinates={setCoordinates} restaurants={restaurants}  setRestaurants={setRestaurants}/>
                 </div>
             </div>

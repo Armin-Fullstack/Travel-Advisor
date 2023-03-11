@@ -1,6 +1,8 @@
 import { useState } from "react";
+import PlaceDetails from "./PlaceDetails";
 
-const List = () => {
+const List = ({restaurants}) => {
+    console.log(restaurants);
     const [type , setType] = useState("Restaurant")
     const [rating , setRating] = useState("All")
     return (
@@ -28,6 +30,14 @@ const List = () => {
                     </select>
                 </form>
             </div>
+            <PlaceDetails/>
+            {/* <div>
+                {restaurants?.map((element) => {
+                    return (
+                     null
+                    )
+                })}
+            </div> */}
         </div>
     )
 }
