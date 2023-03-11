@@ -6,7 +6,7 @@ import { getRestaurantsData } from '../api';
 const Map = () => {
     const [restaurants , setRestaurants] = useState([])
     const [coordinates , setCoordinates] = useState({})
-    const [bounds , setBounds] = useState(null)
+    const [bounds , setBounds] = useState({})
 
     // get user's position 
     useEffect(() => {
@@ -17,8 +17,9 @@ const Map = () => {
 
     // invoking the function from api
     useEffect(() => {
-        getRestaurantsData()
+        getRestaurantsData(bounds.sw , bounds.ne)
         .then((data) => {
+            console.log(data);
             setRestaurants(data)
         })
     } , [coordinates , bounds])
