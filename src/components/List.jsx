@@ -30,14 +30,16 @@ const List = ({restaurants}) => {
                     </select>
                 </form>
             </div>
-            <PlaceDetails/>
-            {/* <div>
-                {restaurants?.map((element) => {
+
+            <>
+                {restaurants?.map((restaurant) => {
                     return (
-                     null
+                        
+                        <PlaceDetails restaurant={restaurant}/>
+                     
                     )
                 })}
-            </div> */}
+            </>
         </div>
     )
 }
