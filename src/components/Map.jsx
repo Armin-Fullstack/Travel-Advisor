@@ -1,12 +1,10 @@
 import GoogleMapReact from 'google-map-react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { getRestaurantsData } from '../api';
 
 
-const Map = () => {
-    const [restaurants , setRestaurants] = useState([])
-    const [coordinates , setCoordinates] = useState({})
-    const [bounds , setBounds] = useState({})
+const Map = ({setCoordinates , coordinates , bounds , setRestaurants, setBounds}) => {
+
 
     // get user's position 
     useEffect(() => {
