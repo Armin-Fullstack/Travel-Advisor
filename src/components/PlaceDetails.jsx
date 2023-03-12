@@ -1,3 +1,5 @@
+import {Rate} from "antd";
+
 
 const PlaceDetails = ({restaurant}) => {
     return (
@@ -8,6 +10,11 @@ const PlaceDetails = ({restaurant}) => {
                 {/* content container  */}
                 <div className="space-y-2 p-2">
                     <h5>{restaurant.name}</h5>
+                     {/* rating container  */}
+                     <div className="flex justify-between">
+                        <Rate value={restaurant.rating} disabled/>
+                        <p className="text-xs">out of {restaurant.num_reviews}</p>
+                    </div>
                     {/* price container  */}
                     <div className="flex justify-between">
                         <span className="text-xs">Price</span>
