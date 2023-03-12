@@ -13,6 +13,11 @@ const PlaceDetails = ({restaurant}) => {
                         <span className="text-xs">Price</span>
                         <span className="text-xs">{restaurant.price_level}</span>
                     </div>
+                     {/* Ranking container  */}
+                     <div className="flex justify-between">
+                        <span className="text-xs">Ranking</span>
+                        <span className="text-xs">{restaurant.ranking}</span>
+                    </div>
                 </div>
             </div>
 
