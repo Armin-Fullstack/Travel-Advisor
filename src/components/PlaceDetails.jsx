@@ -26,6 +26,15 @@ const PlaceDetails = ({restaurant}) => {
                             <p className="text-gray-400">{element.display_name}</p>
                         </div>
                     ))}
+
+                        {/* cuisine container  */}
+                    <div className="flex gap-1 flex-wrap">
+                         {restaurant?.cuisine?.map(({name}) => (
+                        
+                        <span className="bg-gray-300 px-2 py-1 rounded-full text-xs">{name}</span>
+                    
+                         ) )}
+                    </div>
                     
                 </div>
             </div>
