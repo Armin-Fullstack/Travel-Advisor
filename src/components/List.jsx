@@ -31,7 +31,8 @@ const List = ({restaurants}) => {
                 </form>
             </div>
 
-            <>
+                {/* cards container  */}
+            <div className="w-full h-[75vh] overflow-auto flex flex-col space-y-3 mt-4">
                 {restaurants?.map((restaurant) => {
                     return (
                         
@@ -39,7 +40,7 @@ const List = ({restaurants}) => {
                      
                     )
                 })}
-            </>
+            </div>
         </div>
     )
 }

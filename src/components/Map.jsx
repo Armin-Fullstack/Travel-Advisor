@@ -24,7 +24,7 @@ const Map = ({setCoordinates , coordinates , bounds , setRestaurants, setBounds}
 
 
     return (
-        <div className="flex-[2] h-screen">
+        <div className="flex-[2] h-[80vh]">
             <GoogleMapReact
             bootstrapURLKeys={{key: import.meta.env.VITE_GOOGLE_MAP_API_KEY}}
             defaultCenter={coordinates}
