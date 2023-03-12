@@ -18,6 +18,15 @@ const PlaceDetails = ({restaurant}) => {
                         <span className="text-xs">Ranking</span>
                         <span className="text-xs">{restaurant.ranking}</span>
                     </div>
+                    
+                    {restaurant?.awards?.map((element) => (
+                        // certificate container 
+                        <div className="flex justify-between space-y-1">
+                            <img src={element.image.small} alt={element.display_name} />
+                            <p className="text-gray-400">{element.display_name}</p>
+                        </div>
+                    ))}
+                    
                 </div>
             </div>
 
