@@ -49,8 +49,8 @@ const PlaceDetails = ({ restaurant }) => {
           ))}
         </div>
 
-        {/* Address container  */}
         {restaurant?.address && (
+            //  Address container  
           <div className="flex justify-between items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -75,8 +75,8 @@ const PlaceDetails = ({ restaurant }) => {
           </div>
         )}
 
-        {/* Address container  */}
         {restaurant?.phone && (
+            // phone container
           <div className="flex justify-between items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -96,6 +96,14 @@ const PlaceDetails = ({ restaurant }) => {
             <p className="text-gray-400 text-xs">{restaurant.phone}</p>
           </div>
         )}
+
+         {restaurant?.web_url || restaurant?.website ? (
+            <div className="space-x-4 ml-4">
+                <button className="text-xs text-blue-700" onClick={() => window.open(restaurant.web_url , "_blank")}>TRIP ADVISOR</button>
+                <button className="text-xs text-blue-700" onClick={() => window.open(restaurant.website , "_blank")}>WEBSITE</button>
+            </div>
+         ) : ""}
+        
       </div>
     </div>
   );
