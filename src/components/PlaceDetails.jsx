@@ -98,6 +98,7 @@ const PlaceDetails = ({ restaurant }) => {
         )}
 
          {restaurant?.web_url || restaurant?.website ? (
+                // link container 
             <div className="space-x-4 ml-4">
                 <button className="text-xs text-blue-700" onClick={() => window.open(restaurant.web_url , "_blank")}>TRIP ADVISOR</button>
                 <button className="text-xs text-blue-700" onClick={() => window.open(restaurant.website , "_blank")}>WEBSITE</button>

@@ -2,8 +2,6 @@ import { useState } from "react";
 import PlaceDetails from "./PlaceDetails";
 
 const List = ({restaurants , childClicked}) => {
-    console.log(childClicked);
-    console.log(restaurants);
     const [type , setType] = useState("Restaurant")
     const [rating , setRating] = useState("All")
     return (
