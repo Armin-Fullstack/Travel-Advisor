@@ -4,18 +4,24 @@ import { getRestaurantsData } from "../api";
 import { useMediaQuery } from "@chakra-ui/react";
 import { Rate } from "antd";
 import useGetUserCurrentPosition from "../hooks/useGetUserCurrentPosition"
+import useInvokingApi from "../hooks/useInvokingApi";
 
 const Map = ({ setCoordinates, coordinates, bounds, restaurants, setRestaurants, setBounds, setChildclicked }) => {
+  // Hooks
   const [isDesktop] = useMediaQuery("(min-width: 600px)");
   const userCurrentPosition = useGetUserCurrentPosition();
+  const invokingApi = useInvokingApi()
+  // -End
+
   setCoordinates(userCurrentPosition);
+  setRestaurants(invokingApi);
   
-  // invoking the function from api
-  useEffect(() => {
-    getRestaurantsData(bounds.sw, bounds.ne).then((data) => {
-      setRestaurants(data);
-    });
-  }, [coordinates, bounds]);
+  // // invoking the function from api
+  // useEffect(() => {
+  //   getRestaurantsData(bounds.sw, bounds.ne).then((data) => {
+  //     setRestaurants(data);
+  //   });
+  // }, [coordinates, bounds]);
 
   return (
     <div className="flex-[2] h-[80vh]">
